@@ -3,8 +3,9 @@
 # set up input variables
 referenceImg=`jq -r '.referenceImg' config.json`
 referenceBvals=`jq -r '.referenceBvals' config.json`
-movingImg=`jq -r '.referenceBvals' config.json`
-movingBvals=`jq -r '.referenceBvals' config.json`
+referenceBvecs=`jq -r '.referenceBvecs' config.json`
+movingImg=`jq -r '.movingBvals' config.json`
+movingBvals=`jq -r '.movingBvals' config.json`
 movingBvecs=`jq -r '.movingBvecs' config.json`
 
 # set up moving dwi in mrtrix3
