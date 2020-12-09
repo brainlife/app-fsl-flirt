@@ -4,7 +4,7 @@
 referenceImg=`jq -r '.referenceImg' config.json`
 referenceBvals=`jq -r '.referenceBvals' config.json`
 referenceBvecs=`jq -r '.referenceBvecs' config.json`
-movingImg=`jq -r '.movingBvals' config.json`
+movingImg=`jq -r '.movingImg' config.json`
 movingBvals=`jq -r '.movingBvals' config.json`
 movingBvecs=`jq -r '.movingBvecs' config.json`
 
