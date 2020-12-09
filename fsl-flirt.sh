@@ -13,7 +13,7 @@ mrconvert -fslgrad ${movingBvecs} ${movingBvals} ${movingImg} dwi.mif --export_g
 
 # select b0 volumes
 select_dwi_vols ${movingImg} ${movingBvals} b0_mov.nii.gz 0 -m
-select_dwi_vols ${refImg} ${refBvals} b0_ref.nii.gz 0 -m
+select_dwi_vols ${referenceImg} ${referenceBvals} b0_ref.nii.gz 0 -m
 
 # run flirt
 flirt -in b0_mov.nii.gz -ref b0_ref.nii.gz -omat dwi2dwi.mat
