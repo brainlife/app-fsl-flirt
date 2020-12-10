@@ -8,6 +8,8 @@ movingImg=`jq -r '.movingImg' config.json`
 movingBvals=`jq -r '.movingBvals' config.json`
 movingBvecs=`jq -r '.movingBvecs' config.json`
 
+mkdir -p dwi
+
 # set up moving dwi in mrtrix3
 mrconvert -fslgrad ${movingBvecs} ${movingBvals} ${movingImg} dwi.mif --export_grad_mrtrix dwi.b -quiet -force
 
