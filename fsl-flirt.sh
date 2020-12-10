@@ -20,7 +20,7 @@ flirt -in b0_mov.nii.gz -ref b0_ref.nii.gz -omat dwi2dwi.mat
 
 # apply transform to header to follow standard set by mrtrix3 preproc
 transformconvert dwi2dwi.mat b0_mov.nii.gz b0_ref.nii.gz flirt_import dwi2dwi_mrtrix.mat -quiet -force
-mrtransform -linear dwi2acpc_mrtrix.mat dwi.mif dwi_dwi.mif -quiet -force
+mrtransform -linear dwi2dwi_mrtrix.mat dwi.mif dwi_dwi.mif -quiet -force
 
 # convert back to nifti
 mrconvert dwi_dwi.mif ./dwi/dwi.nii.gz -export_grad_fsl ./dwi/dwi.bvecs ./dwi/dwi.bvals -export_grad_mrtrix dwi.b -json_export dwi.json -quiet -force
