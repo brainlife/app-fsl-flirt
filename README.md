@@ -3,6 +3,27 @@
 
 # Linearly align DWI to another DWI with FSL Flirt
 
+<!-- brainlife-app:begin (generated from the App manifest; edit the manifest, not this block) -->
+
+**Linearly aligns one DWI to another by registering their mean b0 images with FSL flirt and applying the transform to the moving DWI and its gradients with MRtrix3.**
+
+Extracts mean b0 images from both DWIs, estimates a linear (affine) transform with FSL flirt, converts it to MRtrix3 format and applies it with mrtransform so that the moving DWI and its bvecs are expressed in the reference DWI space. Use it to bring two diffusion acquisitions of the same subject into register, e.g. before combining or comparing them.
+
+Run it on brainlife.io: [https://doi.org/10.25663/brainlife.app.458](https://doi.org/10.25663/brainlife.app.458)
+
+| Input | Datatype | Required | Description |
+|---|---|---|---|
+| `moving` | `neuro/dwi` | yes | DWI to be aligned (with bvals/bvecs). |
+| `reference` | `neuro/dwi` | yes | DWI that defines the target space. |
+
+| Output | Datatype | Description |
+|---|---|---|
+| `dwi` | `neuro/dwi` | Moving DWI resampled into the reference DWI space, with updated bvals/bvecs. |
+
+Runtime: container `brainlife/mrtrix3:3.0_RC3`; 8 CPUs; 16 h walltime.
+
+<!-- brainlife-app:end -->
+
 This app will linearly align two dMRI images to each other using FSL Flirt.
 
 ### Authors
